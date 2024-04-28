@@ -7,7 +7,9 @@
 
 ## БД, запуск
 БД на DockerHub
+docker pull mprigon/postgres:12
 в терминале запустить:
+docker run --name postgres12 -p 5432:5432 -d -e POSTGRES_PASSWORD=hello mprigon/postgres:12
 docker start postgres12
 пользователь и пароль к БД уже задан в settings.py
 
