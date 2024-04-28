@@ -7,11 +7,21 @@
 
 ## БД, запуск
 БД на DockerHub
-TODO: образ на Hub
+TODO: образ на Hub (с образом уже созданной базы)
+если загрузить контейнер только с PostgreSQL (например, 12),
+то создать в нем базу
+
+docker run --name postgres:12 -p 5432:5432 -d -e POSTGRES_PASSWORD=hello postgres12
+docker exec -it postgres12 psql -U postgres -h localhost
+
+CREATE DATABASE django_site;
+CREATE USER django_user WITH PASSWORD 'django';
+GRANT ALL PRIVILEGES ON DATABASE django_site TO django_user;
+
 в терминале запустить:
 docker run --name postgres12 -p 5432:5432 -d -e POSTGRES_PASSWORD=hello mprigon/postgres:12
 docker start postgres12
-пользователь и пароль к БД уже задан в settings.py
+пользователь и пароль к БД уже заданы в settings.py
 
 ## Сайт на Django
 pip intall requirements
