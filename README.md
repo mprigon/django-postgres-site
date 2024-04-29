@@ -27,6 +27,7 @@ docker start postgres12
 
 ## Сайт на Django
 pip intall requirements
+
 python manage.py runserver
 
 Можно регистрироваться как через сайт, так и через admin.
